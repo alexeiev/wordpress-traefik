@@ -1,0 +1,5 @@
+---
+# vars file for install-docker
+
+docker_url: https://get.docker.com
+compose_url: https://github.com/docker/compose/releases/download/1.29.2/docker-compose

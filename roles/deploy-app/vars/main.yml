@@ -1,0 +1,3 @@
+---
+# vars file for deploy-app
+work_dir: '/opt/app'

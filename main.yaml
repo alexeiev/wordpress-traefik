@@ -1,0 +1,22 @@
+- hosts: all
+  become: yes
+  user: ubuntu
+  gather_facts: no
+  pre_tasks:
+    - name: 'Atualizando o Repozitorio'
+      raw: 'apt-get update'
+    - name: 'Atualizando o sistema'
+      raw: 'apt-get upgrade'
+    - name: 'Instalando Python'
+      raw: 'apt-get upgrade'
+
+- hosts: node1
+  become: yes
+  user: ubuntu
+  roles:
+    - { role: install-docker, tags:["instalando_docker_compose"]}
+
+- hosts: node1
+  user: ubuntu
+  roles: 
+    - { role: deploy-app, tags:["deploy_wordpress_mysql_traefik"]}

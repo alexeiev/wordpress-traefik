@@ -1,0 +1,28 @@
+- name: Instalando o Docker
+  shell: curl -fsSL {{ docker_url }}| bash
+
+- name: Instalando Docker-compose
+  shell:  sudo curl -L "{{ compose_url }}-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
+
+- name: Dando Permissao ao file
+  file:
+    path: /usr/bin/docker-compose
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Adicionar o usuario ubuntu no grupo docker
+  user:
+    name: ubuntu
+    group: docker
+    append: yes
+
+- name: Restart Docker service
+  systemd:
+    name: docker
+    state: restarted
+
+- name: Habilitando o Docker no systemD
+  systemd:
+    name: docker
+    enabled: yes
