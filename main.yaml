@@ -14,9 +14,9 @@
   become: yes
   user: ubuntu
   roles:
-    - { role: install-docker, tags:["instalando_docker_compose"]}
+    - { role: install-docker, tags: ["instalando_docker_compose"] }
 
 - hosts: node1
   user: ubuntu
   roles: 
-    - { role: deploy-app, tags:["deploy_wordpress_mysql_traefik"]}
+    - { role: deploy-app, tags: ["deploy_wordpress_mysql_traefik"] }
