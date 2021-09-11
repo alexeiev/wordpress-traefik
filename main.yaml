@@ -4,11 +4,11 @@
   gather_facts: no
   pre_tasks:
     - name: 'Atualizando o Repozitorio'
-      raw: 'apt-get update'
+      raw: 'apt update'
     - name: 'Atualizando o sistema'
-      raw: 'apt-get upgrade'
+      raw: 'apt upgrade -y'
     - name: 'Instalando Python'
-      raw: 'apt-get upgrade'
+      raw: 'apt install -y python3'
 
 - hosts: node1
   become: yes

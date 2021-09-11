@@ -9,12 +9,12 @@
   register: create_directory
 
 - name: Copiando files para deploy
+  become: yes
   copy: src={{ item }} dest={{ work_dir }}
   with_items:
     - .env
     - acme.json
     - docker-compose.yaml
-    - README.md
   register: copy_files
 
 - name: Subindo o servico com o docker-compose

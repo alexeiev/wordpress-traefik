@@ -16,7 +16,7 @@
 
 - name: Adicionar o usuario ubuntu no grupo docker
   user:
-    name: '{{ user_so }}'
+    name: ubuntu
     group: docker
     append: yes
   register: usermod_docker
