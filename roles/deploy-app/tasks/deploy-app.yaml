@@ -12,10 +12,11 @@
   copy: src={{ item }} dest={{ work_dir }}
   with_items:
     - .env
+    - acme.json
     - docker-compose.yaml
     - README.md
   register: copy_files
 
 - name: Subindo o servico com o docker-compose
-  shell: docker-compose --project-directory {{ work_dir }} up -d
+  shell: docker-compose --project-directory {{ work_dir }} -f {{ work_dir }}docker-compose.yaml -p wordpress up -d
   register: service_up
