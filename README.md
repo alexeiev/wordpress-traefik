@@ -25,6 +25,7 @@ MYSQL_USER=wpadmin
 MYSQL_PASSWORD=wordpress
 HOST=www
 DOMINIO=DOMINIO.com.br
+EMAIL=
 EOF
 ```
 > **OBS.: Modificar as variáveis de acordo com o seu projeto**
