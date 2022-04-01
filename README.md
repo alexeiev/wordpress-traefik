@@ -6,7 +6,7 @@ Será utilizado uma stack com Docker para subir os serviços necessários
 Utilizar o comando para clonar o repositório
 
 ```bash
-git clone https://www.git.com/alexeiev/wordpress-traefik.git
+git clone https://www.github.com/alexeiev/wordpress-traefik.git
 ```
 
 Dentro da raiz do repositório, execute o comando abaixo para a criação do arquivo **.env** onde serão guardadas as variáveis de ambiente para o nosso arquivo docker-compose.yaml utilizar.
